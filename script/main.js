@@ -708,7 +708,7 @@ const setupDatePlanner = () => {
                     date: dateStr,
                     cravings: foodsStr
                 }),
-                timeout: 5000 // 5 seconds timeout before switching to WhatsApp fallback
+                timeout: 10000 // 10 seconds timeout for Vercel cold starts before WhatsApp fallback
             })
             .then(async (response) => {
                 let json = await response.json();
