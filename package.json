@@ -1,0 +1,12 @@
+{
+  "name": "birthday-date-planner",
+  "version": "1.0.0",
+  "description": "Interactive Birthday Date Planner with SMTP direct email confirmations",
+  "main": "api/submit-date.js",
+  "scripts": {
+    "start": "node api/submit-date.js"
+  },
+  "dependencies": {
+    "nodemailer": "^6.9.13"
+  }
+}

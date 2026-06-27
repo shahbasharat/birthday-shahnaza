@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="description" content="A special interactive birthday wishing card for Shahnaza." />
+  <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+  <title>Happy Birthday Shahnaza!!! 🎉</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Style -->
+  <link rel="stylesheet" href="./style/main.css" />
+</head>
+
+<body>
+
+  <audio class="song" loop autoplay>
+    <source src="./music/ms.mp3">
+    Your browser does not support audio.
+  </audio>
+
+  <div class="container">
+
+    <div class="section-one">
+      <h1 class="one">
+        <span lang="ar" dir="rtl">ٱلسَّلَامُ عَلَيْكُمْ</span>
+        <span id="name" lang="ar" dir="rtl">شاهنازة</span>
+      </h1>
+      <p class="two" id="greetingText">
+        Hope your day is as beautiful, bright, and special as you are! ✨
+      </p>
+    </div>
+
+    <div class="three">
+      <p>Because today is a very special day... 😄</p>
+    </div>
+
+    <div class="four">
+      <div class="text-box">
+        <p class="hbd-chatbox">
+          Happy Birthday Shahnaza! 🎂  
+          Wishing you a year ahead filled with infinite joy, laughter, and beautiful blessings! 💖
+        </p>
+        <button class="fake-btn" id="sendBtn" type="button">Send</button>
+      </div>
+    </div>
+
+    <div class="five">
+      <p class="idea-1">That’s what I was going to say...</p>
+      <p class="idea-2">But then I paused...</p>
+      <p class="idea-3">
+        Let’s make it<br>
+        <strong>special</strong>.
+      </p>
+      <p class="idea-4">Because...</p>
+      <p class="idea-5">
+        Your friendship is a true blessing in my life!
+        <span>✨</span>
+      </p>
+      <p class="idea-6">
+        <span>🎉</span>
+      </p>
+    </div>
+
+    <div class="six">
+      <img src="./img/20251221_170826.jpg" alt="profile" class="profile-picture" id="imagePath"/>
+      <img src="img/hat.svg" alt="hat" class="hat" />
+      <div class="wish">
+        <h3 class="wish-hbd">Happy Birthday<br>Shahnaza!</h3>
+        <h5 id="wishText">
+          May your heart be full of happiness today and forever! 💖
+        </h5>
+      </div>
+    </div>
+
+    <!-- Interactive Polaroid Gallery Slide -->
+    <div class="seven-polaroids">
+      <div class="polaroid-card" id="card1">
+        <div class="polaroid-inner">
+          <div class="polaroid-front">
+            <img src="./img/20251221_170740.jpg" alt="Shahnaza" class="polaroid-img" />
+            <p class="polaroid-caption">Click to Flip ✨</p>
+          </div>
+          <div class="polaroid-back">
+            <div class="polaroid-message">
+              To someone who brings absolute warmth, positivity, and sunshine wherever she goes! 🌟
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="polaroid-card" id="card2">
+        <div class="polaroid-inner">
+          <div class="polaroid-front">
+            <img src="./img/20251221_170816.jpg" alt="Shahnaza" class="polaroid-img" />
+            <p class="polaroid-caption">Click to Flip 📸</p>
+          </div>
+          <div class="polaroid-back">
+            <div class="polaroid-message">
+              May this year bring you closer to all your dreams, filled with peace, love, and success! 🚀
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="polaroid-card" id="card3">
+        <div class="polaroid-inner">
+          <div class="polaroid-front">
+            <img src="./img/pic.png" alt="Shahnaza" class="polaroid-img" />
+            <p class="polaroid-caption">Click to Flip 🎬</p>
+          </div>
+          <div class="polaroid-back" style="padding: 12px; background: #fff; flex-direction: column; justify-content: space-between;">
+            <video src="./img/20251221_132035.mp4" class="polaroid-img" autoplay loop muted playsinline style="object-fit: cover; width: 100%; height: 180px; pointer-events: none;"></video>
+            <p class="polaroid-caption" style="color: #ff69b4; font-weight: 600; margin: 4px 0 0 0;">Sweet Memory 💖</p>
+          </div>
+        </div>
+      </div>
+      <button class="fake-btn" id="polaroidsDoneBtn" type="button">Continue 💖</button>
+    </div>
+
+    <div class="seven">
+      <div class="baloons">
+        <img src="img/ballon1.svg" alt="" />
+        <img src="img/ballon2.svg" alt="" />
+        <img src="img/ballon3.svg" alt="" />
+        <img src="img/ballon1.svg" alt="" />
+        <img src="img/ballon2.svg" alt="" />
+        <img src="img/ballon3.svg" alt="" />
+        <img src="img/ballon1.svg" alt="" />
+        <img src="img/ballon2.svg" alt="" />
+        <img src="img/ballon3.svg" alt="" />
+      </div>
+    </div>
+
+    <div class="eight">
+      <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="20" /></svg>
+      <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="20" /></svg>
+      <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="20" /></svg>
+      <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="20" /></svg>
+      <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="20" /></svg>
+      <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="20" /></svg>
+    </div>
+
+    <div class="nine">
+      <div class="date-planner-container">
+        <!-- STEP 1: PROPOSAL -->
+        <div class="planner-step active" id="step-proposal">
+          <h2 class="planner-heading" style="line-height: 1.35; margin-bottom: 12px;">Would you do me the honor of celebrating your special day together? 🎂✨</h2>
+          <p class="planner-subheading">I promise a day filled with laughter, your favorite cravings, and sweet memories. 💖</p>
+          <div class="planner-actions">
+            <button class="planner-btn yes-btn" id="yesBtn" type="button">Yes, I'd love to! 💖</button>
+            <button class="planner-btn no-btn" id="noBtn" type="button">No 😢</button>
+          </div>
+        </div>
+
+        <!-- STEP 2: CALENDAR -->
+        <div class="planner-step" id="step-calendar">
+          <h2 class="planner-heading">Choose our special day 📅</h2>
+          <p class="planner-subheading">August 2026 — Let's pick the perfect day to celebrate you! 🌸</p>
+          <div class="calendar-wrapper">
+            <div class="calendar-header">
+              <span class="month-title">August 2026</span>
+            </div>
+            <div class="calendar-grid-header">
+              <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+            </div>
+            <div class="calendar-grid" id="calendarDays">
+              <!-- Days will be generated by JavaScript -->
+            </div>
+          </div>
+          <div class="planner-actions step-nav">
+            <button class="planner-btn nav-btn next-btn" id="toFoodBtn" type="button" disabled>Next ➡️</button>
+          </div>
+        </div>
+
+        <!-- STEP 3: FOODS -->
+        <div class="planner-step" id="step-food">
+          <h2 class="planner-heading">What are we feasting on? 🍽️</h2>
+          <p class="planner-subheading">Select your absolute favorite cravings!</p>
+          <div class="food-grid">
+            <div class="food-item" data-food="Sushi">
+              <span class="food-emoji">🍣</span>
+              <span class="food-name">Sushi</span>
+            </div>
+            <div class="food-item" data-food="Pasta">
+              <span class="food-emoji">🍝</span>
+              <span class="food-name">Pasta</span>
+            </div>
+            <div class="food-item" data-food="Pizza">
+              <span class="food-emoji">🍕</span>
+              <span class="food-name">Pizza</span>
+            </div>
+            <div class="food-item" data-food="Biryani">
+              <span class="food-emoji">🍛</span>
+              <span class="food-name">Biryani</span>
+            </div>
+            <div class="food-item" data-food="Kebabs">
+              <span class="food-emoji">🍢</span>
+              <span class="food-name">Kebabs</span>
+            </div>
+            <div class="food-item" data-food="Tacos">
+              <span class="food-emoji">🌮</span>
+              <span class="food-name">Tacos</span>
+            </div>
+            <div class="food-item" data-food="Ramen">
+              <span class="food-emoji">🍜</span>
+              <span class="food-name">Ramen</span>
+            </div>
+            <div class="food-item" data-food="Burgers">
+              <span class="food-emoji">🍔</span>
+              <span class="food-name">Burgers</span>
+            </div>
+            <div class="food-item" data-food="Desserts">
+              <span class="food-emoji">🍰</span>
+              <span class="food-name">Desserts</span>
+            </div>
+          </div>
+          <div class="planner-actions step-nav">
+            <button class="planner-btn nav-btn next-btn" id="toTimeBtn" type="button" disabled>Next ➡️</button>
+          </div>
+        </div>
+
+        <!-- STEP 4: TIME -->
+        <div class="planner-step" id="step-time">
+          <h2 class="planner-heading">When should I pick you up? ⏰</h2>
+          <p class="planner-subheading">Choose the perfect time for our celebration</p>
+          <div class="time-options">
+            <div class="time-option" data-time="7:00 PM" data-label="Sunset Evening 🌅">
+              <span class="time-label">Sunset Evening 🌅</span>
+              <span class="time-value">7:00 PM</span>
+            </div>
+            <div class="time-option" data-time="8:30 PM" data-label="Starlit Night 🌌">
+              <span class="time-label">Starlit Night 🌌</span>
+              <span class="time-value">8:30 PM</span>
+            </div>
+            <div class="time-option" data-time="10:00 PM" data-label="Late Night Magic ✨">
+              <span class="time-label">Late Night Magic ✨</span>
+              <span class="time-value">10:00 PM</span>
+            </div>
+            <div class="time-option" id="customTimeOpt" data-time="custom" data-label="Custom">
+              <span class="time-label">Choose a custom time 🕒</span>
+              <span class="time-value">Custom 🕒</span>
+            </div>
+          </div>
+          
+          <div id="customTimePickerContainer" style="display: none; margin-top: 15px; width: 100%; align-items: center; justify-content: center; gap: 10px;">
+            <label for="customTimeInput" style="font-size: 0.9rem; color: #666; font-weight: 500;">Select Time:</label>
+            <input type="time" id="customTimeInput" class="planner-time-input">
+          </div>
+
+          <div class="planner-actions step-nav">
+            <button class="planner-btn nav-btn next-btn" id="toSummaryBtn" type="button" disabled>Next ➡️</button>
+          </div>
+        </div>
+
+        <!-- STEP 5: SUMMARY -->
+        <div class="planner-step" id="step-summary">
+          <h2 class="planner-heading">Our Birthday Date is Set! 🎂💖</h2>
+          <p class="planner-subheading">I can't wait to celebrate you. Something wonderful awaits! ✨</p>
+          
+          <div class="summary-card">
+            <div class="summary-row">
+              <span class="summary-label">📅 THE DATE & TIME</span>
+              <span class="summary-value" id="sumWhen">Saturday, August 1, 7:00 PM</span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-label">🍕 OUR CRAVINGS</span>
+              <span class="summary-value" id="sumWhat">Biryani & Kebabs & Desserts</span>
+            </div>
+          </div>
+
+          <!-- SUCCESS NOTIFICATION -->
+          <div class="success-message" id="successMessage" style="display: none;">
+            <span class="success-icon">💌</span>
+            <p class="success-title">Date Confirmed! 🎉</p>
+            <p class="success-subtitle">A notification was sent to his inbox. Get ready for something wonderful! 💖</p>
+          </div>
+
+          <!-- FALLBACK WHATSAPP NOTIFICATION -->
+          <div class="success-message fallback-message" id="fallbackMessage" style="display: none; background: rgba(255, 243, 230, 0.85); border-color: #ffd8a8;">
+            <span class="success-icon">💬</span>
+            <p class="success-title" style="color: #d9480f; margin: 0 0 5px 0;">Confirm via WhatsApp!</p>
+            <p class="success-subtitle" style="color: #e8590c; margin: 0 0 15px 0;">Direct email is taking too long. Tap below to share the details on WhatsApp! 💖</p>
+            <a class="planner-btn yes-btn wa-share-btn" id="waShareBtn" href="#" target="_blank" style="background-color: #25d366 !important; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3) !important; text-decoration: none; display: inline-block;">Share on WhatsApp 💬</a>
+          </div>
+          
+          <div class="planner-actions final-actions" id="summaryActions">
+            <button class="planner-btn yes-btn confirm-btn" id="confirmBtn" type="button">Confirm Celebration 💖</button>
+            <a class="planner-btn yes-btn calendar-link" id="calendarLink" href="#" target="_blank" style="display: none;">Save to My Calendar 📅</a>
+            <button class="planner-btn nav-btn start-over-btn" id="startOverBtn" type="button">Change Details 🔄</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="nine-footer">
+        <p class="last-smile">Made with 💖 for Shahnaza</p>
+        <button id="replay" type="button">Replay Birthday Wishes 🎂</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Libraries -->
+  <script src="./script/gsap.min.js"></script>
+  <script src="./script/sweetalert2.all.min.js"></script>
+  <script src="./script/main.js"></script>
+
+</body>
+</html>

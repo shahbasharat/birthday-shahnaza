@@ -1,0 +1,1084 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background: linear-gradient(135deg, #fff0f5 0%, #eef5ff 100%);
+  background-attachment: fixed;
+  color: #333;
+  overflow: hidden;
+}
+
+.song {
+  visibility: hidden;
+}
+
+.container {
+  height: 100vh;
+  height: 100dvh;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  visibility: hidden;
+  width: 100vw;
+}
+
+.container > div {
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 15vh;
+}
+
+.one {
+  font-size: 4.5rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+}
+
+.two {
+  font-size: 1.4rem;
+  font-weight: 300;
+  margin: 0;
+}
+
+.three {
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+.four .text-box {
+  border: 3px solid #b2c9e8;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+.text-box p {
+  margin: 0;
+  text-align: left;
+  line-height: 1.5;
+  font-size: 1.1rem;
+}
+
+.text-box span {
+  visibility: hidden;
+}
+
+/* Styled semantic buttons */
+.fake-btn, #polaroidsDoneBtn {
+  background-color: rgb(21, 161, 237);
+  border: none;
+  border-radius: 20px;
+  color: #fff;
+  padding: 0.6rem 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(21, 161, 237, 0.3);
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+  outline: none;
+}
+
+.fake-btn:hover, #polaroidsDoneBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(21, 161, 237, 0.4);
+  filter: brightness(1.05);
+}
+
+.fake-btn:active, #polaroidsDoneBtn:active {
+  transform: translateY(0);
+}
+
+.text-box .fake-btn {
+  position: absolute;
+  bottom: -55px;
+  right: 10px;
+}
+
+.five p {
+  font-size: 2.2rem;
+  left: 0;
+  position: absolute;
+  right: 0;
+  font-weight: 300;
+}
+
+.idea-3 strong {
+  border-radius: 4px;
+  display: inline-block;
+  padding: 4px 10px;
+}
+
+.five .idea-5 {
+  font-size: 4rem;
+  font-weight: 600;
+}
+
+.idea-5 span, .idea-6 span {
+  display: inline-block;
+}
+
+.wish-hbd span {
+  display: inline-block;
+  min-width: 0.3em;
+}
+
+.idea-6 span {
+  font-size: 15rem;
+}
+
+.six {
+  position: relative;
+  top: 5vh;
+  z-index: 1;
+}
+
+.six img.profile-picture {
+  display: inline-block;
+  height: 320px;
+  max-width: 100%;
+  border-radius: 50%;
+  border: 8px solid #fff;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  object-fit: cover;
+}
+
+.six .hat {
+  left: 38%;
+  position: absolute;
+  top: -35%;
+  width: 85px;
+  z-index: 2;
+}
+
+/* Interactive Polaroid Section Styles */
+.seven-polaroids {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  width: 90%;
+  max-width: 1050px;
+  margin: 0 auto;
+  perspective: 1500px;
+  visibility: hidden;
+  z-index: 5;
+  padding-bottom: 80px;
+}
+
+.polaroid-card {
+  width: 220px;
+  height: 275px;
+  position: relative;
+  touch-action: none;
+  user-select: none;
+  transition: box-shadow 0.2s ease;
+}
+
+.polaroid-card.dragging {
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.15);
+  transform: scale(1.05) !important;
+}
+
+.polaroid-inner {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+}
+
+.polaroid-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+.polaroid-front, .polaroid-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 8px;
+  background: #fff;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.polaroid-front {
+  padding: 12px 12px 35px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #e2e8f0;
+}
+
+.polaroid-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+.polaroid-caption {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.85rem;
+  color: #718096;
+  margin: 6px 0 0 0;
+  text-align: center;
+  font-weight: 500;
+}
+
+.polaroid-back {
+  transform: rotateY(180deg);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff5f8;
+  border: 1px solid #fed7e2;
+}
+
+.polaroid-message {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #4a5568;
+  text-align: center;
+  font-weight: 400;
+}
+
+#polaroidsDoneBtn {
+  margin-top: 30px;
+  flex-basis: 100%;
+  max-width: 220px;
+  align-self: center;
+  background-color: #ff69b4;
+  box-shadow: 0 4px 10px rgba(255, 105, 180, 0.3);
+}
+
+#polaroidsDoneBtn:hover {
+  box-shadow: 0 6px 15px rgba(255, 105, 180, 0.4);
+}
+
+.baloons img {
+  display: inline-block;
+  position: absolute;
+}
+
+.baloons img:nth-child(even) {
+  left: -10%;
+}
+
+.baloons img:nth-child(odd) {
+  right: -10%;
+}
+
+.baloons img:nth-child(3n + 0) {
+  left: 30%;
+}
+
+.seven, .eight {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  pointer-events: none;
+}
+
+.seven {
+  z-index: 3;
+}
+
+.eight {
+  z-index: -1;
+}
+
+.eight svg {
+  left: 0;
+  position: absolute;
+  top: 0;
+  visibility: hidden;
+  width: 25px;
+}
+
+.eight svg:nth-child(1) {
+  fill: #bd6ecf;
+  left: 5vw;
+  top: 7vh;
+}
+
+.eight svg:nth-child(2) {
+  fill: #7dd175;
+  left: 35vw;
+  top: 23vh;
+}
+
+.eight svg:nth-child(3) {
+  fill: #349d8b;
+  left: 23vw;
+  top: 33vh;
+}
+
+.eight svg:nth-child(4) {
+  fill: #347a9d;
+  left: 57vw;
+  top: 43vh;
+}
+
+.eight svg:nth-child(5) {
+  fill: #c66053;
+  left: 7vw;
+  top: 68vh;
+}
+
+.eight svg:nth-child(6) {
+  fill: #bfaa40;
+  left: 77vw;
+  top: 42vh;
+}
+
+.wish-hbd {
+  font-size: 3em;
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.wish h5 {
+  font-size: 2rem;
+  font-weight: 300;
+  margin: 10px 0 0;
+}
+
+.nine p {
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+#replay {
+  background: none;
+  border: 2px solid #ff69b4;
+  border-radius: 25px;
+  color: #ff69b4;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.8rem 2rem;
+  transition: all 0.3s ease;
+  z-index: 10;
+  outline: none;
+  margin-top: 15px;
+}
+
+#replay:hover {
+  background-color: #ff69b4;
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+  transform: scale(1.05);
+}
+
+#replay:active {
+  transform: scale(0.95);
+}
+
+/* Media Queries */
+@media screen and (max-height: 1000px) {
+  .six .hat {
+    left: 40%;
+  }
+}
+
+@media screen and (max-height: 800px) {
+  .six .hat {
+    left: 37%;
+  }
+}
+
+@media screen and (max-height: 700px) {
+  .six .hat {
+    left: 32%;
+  }
+}
+
+@media screen and (max-height: 850px) and (max-width: 450px) {
+  .six .hat {
+    left: 32%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    width: 90%;
+  }
+
+  .container > div {
+    top: 10vh;
+  }
+
+  .one {
+    font-size: 3rem;
+  }
+
+  .two {
+    font-size: 1.1rem;
+  }
+
+  .three {
+    font-size: 2.2rem;
+  }
+
+  .four .text-box {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .text-box p {
+    font-size: 0.95rem;
+  }
+
+  .text-box .fake-btn {
+    bottom: -45px;
+    right: 5px;
+    font-size: 0.85rem;
+    padding: 0.5rem 1.2rem;
+  }
+
+  .idea-5 span {
+    display: block;
+  }
+
+  .idea-6 span {
+    font-size: 10rem;
+  }
+
+  .six {
+    top: 0vh;
+  }
+
+  .six img.profile-picture {
+    height: 220px;
+    border-width: 5px;
+  }
+
+  .six .hat {
+    width: 55px;
+    top: -45px;
+    left: 35%;
+  }
+
+  .wish-hbd {
+    font-size: 2em;
+  }
+
+  .wish h5 {
+    font-size: 1.2rem;
+  }
+
+  /* Responsive Polaroid layout on small screens */
+  .seven-polaroids {
+    gap: 15px;
+    padding-bottom: 40px;
+  }
+
+  .polaroid-card {
+    width: 140px;
+    height: 180px;
+  }
+
+  .polaroid-front {
+    padding: 8px 8px 25px 8px;
+  }
+
+  .polaroid-img {
+    height: 115px;
+  }
+
+  .polaroid-caption {
+    font-size: 0.65rem;
+    margin-top: 4px;
+  }
+
+  .polaroid-back {
+    padding: 10px;
+  }
+
+  .polaroid-message {
+    font-size: 0.68rem;
+    line-height: 1.35;
+  }
+
+  #polaroidsDoneBtn {
+    margin-top: 15px;
+    font-size: 0.85rem;
+    padding: 0.5rem 1.2rem;
+  }
+
+  .nine p {
+    font-size: 1.4rem;
+  }
+  
+  #replay {
+    font-size: 0.95rem;
+    padding: 0.6rem 1.5rem;
+  }
+}
+
+/* Date Planner Styles */
+.nine {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.date-planner-container {
+  width: 100%;
+  max-width: 480px;
+  min-height: 400px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.planner-step {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  transform: translateY(15px);
+}
+
+.planner-step.active {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.planner-heading {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #4a4a4a;
+  margin: 0 0 8px 0;
+  text-align: center;
+}
+
+.planner-subheading {
+  font-size: 0.85rem;
+  color: #888;
+  margin: 0 0 25px 0;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.planner-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 15px;
+  position: relative;
+  min-height: 50px;
+}
+
+.planner-btn {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  padding: 10px 25px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.yes-btn {
+  background-color: #ff69b4;
+  color: white;
+}
+
+.yes-btn:hover {
+  background-color: #ff4da6;
+  box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+  transform: translateY(-2px);
+}
+
+.no-btn {
+  background-color: #e0e0e0;
+  color: #666;
+  transition: left 0.1s ease, top 0.1s ease, background-color 0.25s ease;
+}
+
+/* Calendar Styles */
+.calendar-wrapper {
+  background: white;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.calendar-header {
+  text-align: center;
+  margin-bottom: 12px;
+  font-weight: 600;
+  color: #ff69b4;
+}
+
+.calendar-grid-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: #aaa;
+  margin-bottom: 8px;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  row-gap: 5px;
+}
+
+.calendar-day {
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #4a4a4a;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.calendar-day.empty {
+  cursor: default;
+}
+
+.calendar-day:not(.empty):hover {
+  background-color: #ffeef8;
+  color: #ff69b4;
+}
+
+.calendar-day.selected {
+  background-color: #ff69b4 !important;
+  color: white !important;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(255, 105, 180, 0.3);
+}
+
+.calendar-day.birthday-highlight {
+  border: 2px dashed #ff69b4;
+  background-color: #fff0f6;
+  position: relative;
+  font-weight: bold;
+  color: #ff69b4;
+}
+
+.calendar-day.birthday-highlight::after {
+  content: '🎂';
+  position: absolute;
+  font-size: 0.7rem;
+  top: -6px;
+  right: -6px;
+}
+
+/* Food Selection Grid */
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  max-height: 240px;
+}
+
+.food-item {
+  background: white;
+  border-radius: 12px;
+  padding: 12px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  border: 2px solid transparent;
+  user-select: none;
+}
+
+.food-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.06);
+}
+
+.food-item.selected {
+  border-color: #ff69b4;
+  background-color: #ffeef8;
+  color: #ff69b4;
+  font-weight: 600;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(255, 105, 180, 0.15);
+}
+
+.food-emoji {
+  font-size: 1.5rem;
+  margin-bottom: 6px;
+}
+
+.food-name {
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+/* Time Selection Styles */
+.time-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.time-option {
+  background: white;
+  border-radius: 12px;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  border: 2px solid transparent;
+  user-select: none;
+}
+
+.time-option:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.time-option.selected {
+  border-color: #ff69b4;
+  background-color: #ffeef8;
+  color: #ff69b4;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(255, 105, 180, 0.1);
+}
+
+.time-label {
+  font-size: 0.9rem;
+}
+
+.time-value {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.time-option.selected .time-value {
+  color: #ff69b4;
+}
+
+/* Summary Card */
+.summary-card {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  margin-bottom: 10px;
+}
+
+.summary-row {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.summary-row:last-child {
+  margin-bottom: 0;
+}
+
+.summary-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #aaa;
+  margin-bottom: 4px;
+  letter-spacing: 1px;
+}
+
+.summary-value {
+  font-size: 1.05rem;
+  color: #4a4a4a;
+  font-weight: 600;
+}
+
+.calendar-link {
+  text-decoration: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Nav Button States */
+.step-nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav-btn {
+  background-color: #4a4a4a;
+  color: white;
+}
+
+.nav-btn:hover:not(:disabled) {
+  background-color: #333;
+  transform: translateY(-1px);
+}
+
+.nav-btn:disabled {
+  background-color: #ccc;
+  color: #888;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.start-over-btn {
+  background-color: transparent;
+  color: #888;
+  box-shadow: none;
+  border: 1px solid #ccc;
+}
+
+.start-over-btn:hover {
+  background-color: #f5f5f5;
+  color: #4a4a4a;
+}
+
+.nine-footer {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.last-smile {
+  font-size: 0.85rem;
+  color: #ff69b4;
+  margin: 0;
+  font-weight: 600;
+}
+
+.nine-footer #replay {
+  margin-top: 0;
+}
+
+/* Mobile responsive Date Planner overrides */
+@media screen and (max-width: 500px) {
+  .date-planner-container {
+    padding: 20px;
+    min-height: 340px;
+  }
+  
+  .planner-heading {
+    font-size: 1.25rem;
+  }
+  
+  .planner-subheading {
+    font-size: 0.75rem;
+    margin-bottom: 15px;
+  }
+  
+  .calendar-wrapper {
+    padding: 10px;
+  }
+  
+  .calendar-grid-header {
+    font-size: 0.75rem;
+  }
+  
+  .calendar-day {
+    font-size: 0.75rem;
+  }
+  
+  .food-grid {
+    gap: 8px;
+    max-height: 220px;
+  }
+  
+  .food-item {
+    padding: 8px 4px;
+  }
+  
+  .food-emoji {
+    font-size: 1.2rem;
+  }
+  
+  .food-name {
+    font-size: 0.65rem;
+  }
+  
+  .time-option {
+    padding: 8px 15px;
+  }
+  
+  .time-label {
+    font-size: 0.8rem;
+  }
+  
+  .time-value {
+    font-size: 0.75rem;
+  }
+  
+  .summary-card {
+    padding: 15px;
+  }
+  
+  .summary-value {
+    font-size: 0.95rem;
+  }
+
+  .date-planner-container {
+    padding: 20px;
+    min-height: 410px;
+  }
+
+  .planner-heading {
+    font-size: 1.3rem;
+  }
+
+  .planner-subheading {
+    font-size: 0.7rem;
+    margin-bottom: 12px;
+  }
+
+  .calendar-day {
+    height: 28px;
+    font-size: 0.7rem;
+  }
+
+  .time-options {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .time-option {
+    padding: 6px 10px;
+  }
+
+  .final-actions {
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .final-actions .planner-btn {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+/* Custom Time Input Styling */
+.planner-time-input {
+  padding: 8px 12px;
+  border: 1px solid #ffb6c1;
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  color: #ff69b4;
+  outline: none;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 8px rgba(255, 182, 193, 0.2);
+  transition: all 0.2s ease;
+}
+
+.planner-time-input:focus {
+  border-color: #ff69b4;
+  box-shadow: 0 4px 12px rgba(255, 105, 180, 0.3);
+}
+
+/* Success Message Block Styling */
+.success-message {
+  margin: 15px 0;
+  padding: 15px;
+  background: rgba(230, 247, 238, 0.85);
+  border: 1.5px solid #a3e2c1;
+  border-radius: 15px;
+  text-align: center;
+  animation: scaleUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.success-icon {
+  font-size: 2.2rem;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.success-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.15rem;
+  color: #2e7d32;
+  font-weight: 600;
+  margin: 0 0 5px 0;
+}
+
+.success-subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.88rem;
+  color: #388e3c;
+  margin: 0;
+}
+
+.confirm-btn {
+  background-color: #ff1493 !important;
+  box-shadow: 0 4px 12px rgba(255, 20, 147, 0.3) !important;
+}
+
+.confirm-btn:hover {
+  box-shadow: 0 6px 18px rgba(255, 20, 147, 0.4) !important;
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
